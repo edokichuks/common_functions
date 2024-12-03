@@ -11,7 +11,7 @@ Future<dynamic> main(final context) async {
     .setProject(Platform.environment['APPWRITE_FUNCTION_PROJECT_ID'] ?? '')
     .setKey(context.req.headers['x-appwrite-key'] ?? '');
   final users = Users(client);
-
+ 
   try {
     final response = await users.list();
     // Log messages and errors to the Appwrite Console
@@ -29,6 +29,7 @@ Future<dynamic> main(final context) async {
   }
 
   return context.res.json({
+    "user": "Edoki Chukwuyem",
     'motto': 'Build like a team of hundreds_',
     'learn': 'https://appwrite.io/docs',
     'connect': 'https://appwrite.io/discord',
